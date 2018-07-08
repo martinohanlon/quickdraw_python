@@ -21,7 +21,7 @@ Getting started
 Use
 ---
 
-::
+.. code-block:: python
 
     qd = QuickDrawData()
     anvil_drawing = qd.get_drawing("anvil")
