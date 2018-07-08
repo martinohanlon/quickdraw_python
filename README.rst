@@ -23,8 +23,10 @@ Use
 
 .. code-block:: python
 
+    from quickdraw import QuickDrawData
     qd = QuickDrawData()
     anvil_drawing = qd.get_drawing("anvil")
+    
     print(anvil_drawing)
     print(anvil_drawing.strokes)
 
