@@ -1,41 +1,32 @@
 quickdraw
 =========
 
-quickdraw is an API for using the Google Quick, Draw! Data. [quickdraw.withgoogle.com/data](https://quickdraw.withgoogle.com/data)
+quickdraw is an API for using the Google Quick, Draw! Data. `quickdraw.withgoogle.com/data <https://quickdraw.withgoogle.com/data>`_
 
 Getting started
 ---------------
 
-Windows
-^^^^^^^
++ Windows::
 
-```
-pip install quickdraw
-```
+    pip install quickdraw
 
-macOS
-^^^^^
++ macOS::
 
-```
-pip3 install quickdraw
-```
+    pip3 install quickdraw
 
-Linux / Raspberry Pi
-^^^^^^^^^^^^^^^^^^^^
++ Linux / Raspberry Pi::
 
-```
-sudo pip3 install quickdraw
-```
+    sudo pip3 install quickdraw
 
 Use
 ---
 
-```python
-qd = QuickDrawData()
-anvil_drawing = qd.get_drawing("anvil")
-print(anvil_drawing)
-print(anvil_drawing.strokes)
-```
+::
+
+    qd = QuickDrawData()
+    anvil_drawing = qd.get_drawing("anvil")
+    print(anvil_drawing)
+    print(anvil_drawing.strokes)
 
 Documentation
 -------------
