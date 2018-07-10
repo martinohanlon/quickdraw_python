@@ -9,12 +9,12 @@ else:
 
 __project__ = 'quickdraw'
 __desc__ = 'An API for downloading and reading the google quickdraw data.'
-__version__ = '0.0.2'
+__version__ = '0.0.4'
 __author__ = "Martin O'Hanlon"
 __author_email__ = 'martin@ohanlonweb.com'
 __license__ = 'MIT'
 __url__ = 'https://github.com/martinohanlon/quickdraw_python'
-# __requires__ = ['pillow',]
+__requires__ = ['pillow', 'requests', ]
 __long_description__ = """# quickdraw
 
 [Google Quick, Draw!](https://quickdraw.withgoogle.com/) is a game which is 
@@ -47,15 +47,18 @@ sudo pip3 install quickdraw
 
 ## Use
 
-Open the Quick Draw data and pull back an **anvil** drawing.
+Open the Quick Draw data, pull back an **anvil** drawing and save it.
 
 ```python
     from quickdraw import QuickDrawData
     qd = QuickDrawData()
     anvil = qd.get_drawing("anvil")
-    
-    print(anvil)
+    anvil.image.save("my_anvil.gif")
 ```
+
+## Documentation
+
+[quickdraw.readthedocs.io](https://quickdraw.readthedocs.io)
 
 """
 
@@ -87,5 +90,5 @@ if __name__ == '__main__':
         author_email = __author_email__,
         license= __license__,
         packages = [__project__],
-        # install_requires = __requires__,
+        install_requires = __requires__,
         zip_safe=False)

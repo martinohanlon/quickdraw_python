@@ -62,9 +62,13 @@ Drawings are returned as `QuickDrawing`_ objects which exposes the properties of
     print(anvil.image_data)
     print(anvil.strokes)
 
-``strokes`` is a list of pen strokes containing a list of ``(x,y)`` coordinates which make up the drawing.
+You can save the drawing using the ``image`` property.
 
-Open a group of Quick Draw drawings using `QuickDrawDataGroup`_ passing the name of the drawing ("anvil", "aircraft", "baseball", etc).
+.. code-block:: python
+
+    anvil.image.save("my_anvil.gif")
+
+You can open a group of Quick Draw drawings using `QuickDrawDataGroup`_ passing the name of the drawing ("anvil", "aircraft", "baseball", etc).
 
 .. code-block:: python
 
@@ -73,15 +77,6 @@ Open a group of Quick Draw drawings using `QuickDrawDataGroup`_ passing the name
     anvils = QuickDrawDataGroup("anvil")
     print(anvils.drawing_count)
     print(anvils.get_drawing())
-
-You can get a list of all the drawings using the `drawing_names`_ property of `QuickDrawData`_.
-
-.. code-block:: python
-
-    from quickdraw import QuickDrawData
-
-    qd = QuickDrawData()
-    print(qd.drawing_names)
 
 By default only 1000 drawings are opened, you can change this by modifying the ``max_drawings`` parameter of `QuickDrawDataGroup`_, setting it to ``None`` will open all the drawings in that group.
 
@@ -102,6 +97,15 @@ To iterate through all the drawings in a group use the `drawings`_ generator.
     for drawing in qdg.drawings:
         print(drawing)
 
+You can get a list of all the drawing names using the `drawing_names`_ property of `QuickDrawData`_.
+
+.. code-block:: python
+
+    from quickdraw import QuickDrawData
+
+    qd = QuickDrawData()
+    print(qd.drawing_names)
+
 Examples
 --------
 
@@ -110,7 +114,7 @@ Examples
 Documentation
 -------------
 
-`API documentation`_ can be found at `quickdraw-python.readthedocs.io`_
+`API documentation`_ can be found at `quickdraw.readthedocs.io`_
 
 Warning
 -------
@@ -135,14 +139,14 @@ Status
 .. _Martin O'Hanlon: https://github.com/martinohanlon
 .. _stuffaboutco.de: http://stuffaboutco.de
 .. _@martinohanlon: https://twitter.com/martinohanlon
-.. _API documentation: https://quickdraw-python.readthedocs.io/en/latest/api.html
-.. _quickdraw-python.readthedocs.io: https://quickdraw-python.readthedocs.io
+.. _API documentation: https://quickdraw.readthedocs.io/en/latest/api.html
+.. _quickdraw.readthedocs.io: https://quickdraw.readthedocs.io
 .. _Quick Draw: https://quickdraw.withgoogle.com/
 .. _Quick Draw data: https://quickdraw.withgoogle.com/data
 .. _Code examples: https://github.com/martinohanlon/quickdraw_python/tree/master/examples
 .. _quickdraw GitHub repository: https://github.com/martinohanlon/quickdraw_python
-.. _QuickDrawing: https://quickdraw-python.readthedocs.io/en/latest/api.html#quickdrawing
-.. _QuickDrawData: https://quickdraw-python.readthedocs.io/en/latest/api.html#quickdrawdata
-.. _QuickDrawDataGroup: https://quickdraw-python.readthedocs.io/en/latest/api.html#quickdrawdatagroup
-.. _drawing_names: https://quickdraw-python.readthedocs.io/en/latest/api.html#quickdraw.QuickDrawDataGroup.drawing_names
-.. _drawings: https://quickdraw-python.readthedocs.io/en/latest/api.html#quickdraw.QuickDrawDataGroup.drawings
+.. _QuickDrawing: https://quickdraw.readthedocs.io/en/latest/api.html#quickdrawing
+.. _QuickDrawData: https://quickdraw.readthedocs.io/en/latest/api.html#quickdrawdata
+.. _QuickDrawDataGroup: https://quickdraw.readthedocs.io/en/latest/api.html#quickdrawdatagroup
+.. _drawing_names: https://quickdraw.readthedocs.io/en/latest/api.html#quickdraw.QuickDrawDataGroup.drawing_names
+.. _drawings: https://quickdraw.readthedocs.io/en/latest/api.html#quickdraw.QuickDrawDataGroup.drawings
