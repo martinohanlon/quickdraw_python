@@ -3,7 +3,7 @@ quickdraw
 
 `Google Quick, Draw! <https://quickdraw.withgoogle.com/>`_ is a game which is training a neural network to recognise doodles.
 
-`quickdraw` is an API for using the Google Quick, Draw! data (`quickdraw.withgoogle.com/data <https://quickdraw.withgoogle.com/data>`_), downloading the data files from as and when needed, caching them locally and allowing them to be used.
+`quickdraw` is an API for using the Google Quick, Draw! data `quickdraw.withgoogle.com/data <https://quickdraw.withgoogle.com/data>`_, downloading the data files as and when needed, caching them locally and allowing them to be used.
 
 Getting started
 ---------------

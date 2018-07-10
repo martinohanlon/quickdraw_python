@@ -9,43 +9,53 @@ else:
 
 __project__ = 'quickdraw'
 __desc__ = 'An API for downloading and reading the google quickdraw data.'
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 __author__ = "Martin O'Hanlon"
 __author_email__ = 'martin@ohanlonweb.com'
 __license__ = 'MIT'
 __url__ = 'https://github.com/martinohanlon/quickdraw_python'
-__requires__ = ['pillow',]
+# __requires__ = ['pillow',]
 __long_description__ = """# quickdraw
 
-quickdraw is an API for using the Google QuickDraw data set. [quickdraw.withgoogle.com/data](https://quickdraw.withgoogle.com/data)
+[Google Quick, Draw!](https://quickdraw.withgoogle.com/) is a game which is 
+training a neural network to recognise doodles.
 
-## Install
+`quickdraw` is an API for using the Google Quick, Draw! data 
+[quickdraw.withgoogle.com/data](https://quickdraw.withgoogle.com/data), 
+downloading the data files as and when needed, caching them locally and 
+allowing them to be used.
 
-### Windows
+## Getting started
 
-```
++ Windows
+
+```bash
 pip install quickdraw
 ```
 
-### macOS
++ macOS
 
-```
+```bash
 pip3 install quickdraw
 ```
 
-### Linux / Raspberry Pi
++ Linux / Raspberry Pi
 
-```
+```bash
 sudo pip3 install quickdraw
 ```
 
 ## Use
 
-to come.
+Open the Quick Draw data and pull back an **anvil** drawing.
 
-## Documentation
-
-to come.
+```python
+    from quickdraw import QuickDrawData
+    qd = QuickDrawData()
+    anvil = qd.get_drawing("anvil")
+    
+    print(anvil)
+```
 
 """
 
@@ -56,7 +66,7 @@ __classifiers__ = [
     "Intended Audience :: Education",
     "Intended Audience :: Developers",
     "Topic :: Education",
-    "Topic :: Communications",
+    "Topic :: Scientific/Engineering :: Image Recognition",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.3",
@@ -66,13 +76,16 @@ __classifiers__ = [
 ]
 
 if __name__ == '__main__':
-    setup(name='quickdraw',
-          version = __version__,
-          description = __desc__,
-          url = __url__,
-          author = __author__,
-          author_email = __author_email__,
-          license= __license__,
-          packages = [__project__],
-          # install_requires = __requires__,
-          zip_safe=False)
+    setup(
+        name='quickdraw',
+        version = __version__,
+        description = __desc__,
+        long_description=__long_description__,
+        long_description_content_type='text/markdown',
+        url = __url__,
+        author = __author__,
+        author_email = __author_email__,
+        license= __license__,
+        packages = [__project__],
+        # install_requires = __requires__,
+        zip_safe=False)
