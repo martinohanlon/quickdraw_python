@@ -1,11 +1,11 @@
 quickdraw
 =========
 
-`Google Quick, Draw!`_ is a doodle drawing game which is training a neural network to recognise them.
+`Quick, Draw`_ is a drawing game which is training a neural network to recognise doodles.
 
 |quickdraw|
 
-`quickdraw` is an API for accessing the `_Google Quick, Draw! data`_ - it downloads the data files as and when needed, caches them locally and interprets them so they can be used.
+``quickdraw`` is an API for accessing the `Quick, Draw data`_ - it downloads the data files as and when needed, caches them locally and interprets them so they can be used.
 
 Created by `Martin O'Hanlon`_ (`@martinohanlon`_, `stuffaboutco.de`_).
 
@@ -74,7 +74,7 @@ Open a group of Quick Draw drawings using `QuickDrawDataGroup`_ passing the name
     print(anvils.drawing_count)
     print(anvils.get_drawing())
 
-You can get a list of all the drawings using the `drawing_names`_ property of QuickDrawData.
+You can get a list of all the drawings using the `drawing_names`_ property of `QuickDrawData`_.
 
 .. code-block:: python
 
@@ -92,7 +92,7 @@ By default only 1000 drawings are opened, you can change this by modifying the `
     anvils = QuickDrawDataGroup("anvil", max_drawings=None)
     print(anvils.drawing_count)
 
-To iterate through all the drawings in a group use the `drawings` generator.
+To iterate through all the drawings in a group use the `drawings`_ generator.
 
 .. code-block:: python
 
@@ -137,11 +137,12 @@ Status
 .. _@martinohanlon: https://twitter.com/martinohanlon
 .. _API documentation: https://quickdraw-python.readthedocs.io/en/latest/api.html
 .. _quickdraw-python.readthedocs.io: https://quickdraw-python.readthedocs.io
-.. _Google Quick, Draw!: https://quickdraw.withgoogle.com/
-.. _Google Quick, Draw!: data: https://quickdraw.withgoogle.com/data
+.. _Quick, Draw: https://quickdraw.withgoogle.com/
+.. _Quick, Draw: data: https://quickdraw.withgoogle.com/data
 .. _Code examples: https://github.com/martinohanlon/quickdraw_python/tree/master/examples
 .. _quickdraw GitHub repository: https://github.com/martinohanlon/quickdraw_python
 .. _QuickDrawing: https://quickdraw-python.readthedocs.io/en/latest/api.html#quickdrawing
 .. _QuickDrawData: https://quickdraw-python.readthedocs.io/en/latest/api.html#quickdrawdata
 .. _QuickDrawDataGroup: https://quickdraw-python.readthedocs.io/en/latest/api.html#quickdrawdatagroup
 .. _drawing_names: https://quickdraw-python.readthedocs.io/en/latest/api.html#quickdraw.QuickDrawDataGroup.drawing_names
+.. _drawings: https://quickdraw-python.readthedocs.io/en/latest/api.html#quickdraw.QuickDrawDataGroup.drawings
