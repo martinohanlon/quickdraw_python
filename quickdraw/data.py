@@ -78,6 +78,14 @@ class QuickDrawData():
         return self.get_drawing_group(name).get_drawing(index)
 
     def get_drawing_group(self, name):
+        """
+        Get a group of drawings by name.
+
+        Returns an instance of :class:`QuickDrawDataGroup`.
+
+        :param string name:
+            The name of the drawings (anvil, ant, aircraft, etc).
+        """
         # has this drawing group been loaded to memory
         if name not in self._drawing_groups.keys():
             drawings = QuickDrawDataGroup(
@@ -91,11 +99,17 @@ class QuickDrawData():
         return self._drawing_groups[name]
 
     def load_all_drawings(self):
+        """
+        Loads (and downloads if required) all drawings into memory.
+        """
         for drawing_group in QUICK_DRAWING_NAMES:
             self.get_drawing_group(drawing_group)
 
     @property
     def drawing_names(self):
+        """
+        Returns a list of all the potential drawing names.
+        """
         return QUICK_DRAWING_NAMES
 
 

@@ -8,3 +8,4 @@ Table of Contents
    :caption: Contents:
 
    api
+   changelog
