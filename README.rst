@@ -137,8 +137,8 @@ Status
 .. _@martinohanlon: https://twitter.com/martinohanlon
 .. _API documentation: https://quickdraw-python.readthedocs.io/en/latest/api.html
 .. _quickdraw-python.readthedocs.io: https://quickdraw-python.readthedocs.io
-.. _Quick, Draw: https://quickdraw.withgoogle.com/
-.. _Quick, Draw: data: https://quickdraw.withgoogle.com/data
+.. _Quick Draw: https://quickdraw.withgoogle.com/
+.. _Quick Draw data: https://quickdraw.withgoogle.com/data
 .. _Code examples: https://github.com/martinohanlon/quickdraw_python/tree/master/examples
 .. _quickdraw GitHub repository: https://github.com/martinohanlon/quickdraw_python
 .. _QuickDrawing: https://quickdraw-python.readthedocs.io/en/latest/api.html#quickdrawing
