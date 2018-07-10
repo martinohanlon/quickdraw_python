@@ -11,10 +11,11 @@ CACHE_DIR = path.join(".",".quickdrawcache")
 
 
 class QuickDrawData():
-    def __init__(self, max_drawings=1000, refresh_data=False, jit_loading=True, print_messages=True):
+    def __init__(self, max_drawings=1000, refresh_data=False, jit_loading=True, print_messages=True, cache_dir=CACHE_DIR):
         self._print_messages = print_messages
         self._refresh_data = refresh_data
         self._max_drawings = max_drawings
+        self._cache_dir = cache_dir
 
         self._drawing_groups = {}
 
@@ -32,7 +33,8 @@ class QuickDrawData():
                 name, 
                 max_drawings=self._max_drawings, 
                 refresh_data=self._refresh_data, 
-                print_messages=self._print_messages)
+                print_messages=self._print_messages,
+                cache_dir=self._cache_dir)
             self._drawing_groups[name] = drawings
 
         return self._drawing_groups[name]
@@ -48,7 +50,7 @@ class QuickDrawData():
 
 class QuickDrawDataGroup():
 
-    def __init__(self, name, max_drawings=1000, refresh_data=False, print_messages=True):
+    def __init__(self, name, max_drawings=1000, refresh_data=False, print_messages=True, cache_dir=CACHE_DIR):
         
         if name not in QUICK_DRAWING_NAMES:
             raise ValueError("{} is not a valid google quick drawing".format(name))
@@ -56,19 +58,19 @@ class QuickDrawDataGroup():
         self._name = name
         self._print_messages = print_messages
         self._max_drawings = max_drawings
+        self._cache_dir = cache_dir
         
         self._drawings = []
 
         # get the binary file for this drawing?
-        filename = path.join(CACHE_DIR, QUICK_DRAWING_FILES[name])
-        print(filename)
+        filename = path.join(self._cache_dir, QUICK_DRAWING_FILES[name])
         
         # if the binary file doesn't exist or refresh_data is True, download the file
         if not path.isfile(filename) or refresh_data:
             
             # if the cache dir doesnt exist, create it
-            if not path.isdir(CACHE_DIR):
-                makedirs(CACHE_DIR)
+            if not path.isdir(self._cache_dir):
+                makedirs(self._cache_dir)
             
             # download the binary file
             url = BINARY_URL + QUICK_DRAWING_FILES[name]
@@ -106,8 +108,9 @@ class QuickDrawDataGroup():
         self._drawings_cache = []
 
         self._drawing_count = 0
+        self._current_drawing = -1
+        
         drawings_to_load = self._max_drawings
-
         if self._max_drawings is None:
             # bit hacky! but efficient...
             drawings_to_load = 9999999999999
@@ -137,10 +140,11 @@ class QuickDrawDataGroup():
                     'image': image
                 })
 
+            # nothing left to read
             except struct.error:
                 break
 
-            self._drawing_count = self._drawing_count + 1
+            self._drawing_count += 1
 
         self._print_message("load complete")
 
@@ -151,6 +155,18 @@ class QuickDrawDataGroup():
     @property
     def drawing_count(self):
         return self._drawing_count
+
+    @property
+    def drawings(self):
+        while True:
+            self._current_drawing += 1
+            if self._current_drawing == self._drawing_count - 1:
+                # reached the end to the drawings
+                self._current_drawing = 0
+                raise StopIteration()
+            else:
+                # yield the next drawing
+                yield self.get_drawing(index = self._current_drawing)
 
     def get_drawing(self, index=None):
         if index is None:
@@ -182,7 +198,7 @@ class QuickDrawing():
 
     @property
     def recognized(self):
-        return self._drawing_data["recognized"]
+        return bool(self._drawing_data["recognized"])
 
     @property
     def timestamp(self):
