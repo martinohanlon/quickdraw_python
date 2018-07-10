@@ -26,7 +26,7 @@ class QuickDrawData():
         qd = QuickDrawData()
 
         anvil = qd.get_drawing("anvil")
-        print(anvil)
+        anvil.image.save("my_anvil.gif")
 
     :param int max_drawings:
         The maximum number of drawings to be loaded into memory,
@@ -124,7 +124,8 @@ class QuickDrawDataGroup():
         from quickdraw import QuickDrawDataGroup
 
         ants = QuickDrawDataGroup("ant")
-        ants.get_drawing()
+        ant = ants.get_drawing()
+        ant.image.save("my_ant.gif")
 
     :param string name:
         The name of the drawings to be loaded (anvil, ant, aircraft, etc).
