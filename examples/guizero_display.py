@@ -1,3 +1,8 @@
+# This examples requires guizero
+#  windows - pip install guizero
+#  macos - pip3 install guizero
+#  linux/raspberry pi - sudo pip3 install guizero
+
 from guizero import App, Text, Combo, Picture
 from quickdraw import QuickDrawData
 
