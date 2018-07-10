@@ -1,5 +1,5 @@
 from quickdraw import QuickDrawDataGroup
 
-qdg = QuickDrawDataGroup("anvil")
-for drawing in qdg.drawings:
-    print(drawing.recognized)
+anvils = QuickDrawDataGroup("anvil")
+for anvil in anvils.drawings:
+    print(anvil)

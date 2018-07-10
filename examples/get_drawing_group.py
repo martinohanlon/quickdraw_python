@@ -1,5 +1,5 @@
 from quickdraw import QuickDrawDataGroup
 
-qdg = QuickDrawDataGroup("anvil")
-print(qdg.drawing_count)
-print(qdg.get_drawing())
+anvils = QuickDrawDataGroup("anvil")
+print(anvils.drawing_count)
+print(anvils.get_drawing())

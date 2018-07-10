@@ -1,24 +1,28 @@
 quickdraw
 =========
 
-`Google Quick, Draw! <https://quickdraw.withgoogle.com/>`_ is a game which is training a neural network to recognise doodles and the drawing data has been open sourced.
+`Google Quick, Draw! <https://quickdraw.withgoogle.com/>`_ is a game which is training a neural network to recognise doodles.
 
-`quickdraw` is an API for using the Google Quick, Draw! Data. `quickdraw.withgoogle.com/data <https://quickdraw.withgoogle.com/data>`_
-
-It will download the data files from `quickdraw.withgoogle.com/data <https://quickdraw.withgoogle.com/data>`_ as and when needed, caching them locally.
+`quickdraw` is an API for using the Google Quick, Draw! data (`quickdraw.withgoogle.com/data <https://quickdraw.withgoogle.com/data>`_), downloading the data files from as and when needed, caching them locally and allowing them to be used.
 
 Getting started
 ---------------
 
-+ Windows .. code-block:: bash
++ Windows 
+
+.. code-block:: bash
 
     pip install quickdraw
 
-+ macOS .. code-block:: bash
++ macOS 
+
+.. code-block:: bash
 
     pip3 install quickdraw
 
-+ Linux / Raspberry Pi .. code-block:: bash
++ Linux / Raspberry Pi 
+
+.. code-block:: bash
 
     sudo pip3 install quickdraw
 
@@ -98,7 +102,7 @@ to come.
 Warning
 -------
 
-The drawings have not been curated - there is no guarantee it'll actually be a picture of what you are asking it for (although in my experience they are)!
+The drawings have been moderated but there is no guarantee it'll actually be a picture of what you are asking it for (although in my experience they are)!
 
 Status
 ------
