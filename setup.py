@@ -14,7 +14,7 @@ __author__ = "Martin O'Hanlon"
 __author_email__ = 'martin@ohanlonweb.com'
 __license__ = 'MIT'
 __url__ = 'https://github.com/martinohanlon/quickdraw_python'
-# __requires__ = ['pillow',]
+__requires__ = ['pillow',]
 __long_description__ = """# quickdraw
 
 [Google Quick, Draw!](https://quickdraw.withgoogle.com/) is a game which is 
@@ -86,5 +86,5 @@ if __name__ == '__main__':
         author_email = __author_email__,
         license= __license__,
         packages = [__project__],
-        # install_requires = __requires__,
+        install_requires = __requires__,
         zip_safe=False)
