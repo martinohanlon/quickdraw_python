@@ -7,6 +7,8 @@ quickdraw
 
 ``quickdraw`` is an API for accessing the `Quick Draw data`_ - it downloads the data files as and when needed, caches them locally and interprets them so they can be used.
 
+|quickdrawpreview|
+
 Created by `Martin O'Hanlon`_ (`@martinohanlon`_, `stuffaboutco.de`_).
 
 Getting started
@@ -67,6 +69,8 @@ You can save the drawing using the ``image`` property.
 .. code-block:: python
 
     anvil.image.save("my_anvil.gif")
+
+|myanvil|
 
 You can open a group of Quick Draw drawings using `QuickDrawDataGroup`_ passing the name of the drawing ("anvil", "aircraft", "baseball", etc).
 
@@ -132,6 +136,10 @@ Status
    :alt: quickdraw
 
 .. |quickdrawpreview| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/quickdraw_preview.png
+   :scale: 100 %
+   :alt: quickdraw_preview
+
+.. |myanvil| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/myanvil.png
    :scale: 100 %
    :alt: quickdraw_preview
 
