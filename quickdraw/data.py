@@ -3,6 +3,7 @@ from random import choice
 from os import path, makedirs
 from requests import get
 from requests.exceptions import ConnectionError
+from PIL import Image, ImageDraw
 
 from .names import QUICK_DRAWING_FILES, QUICK_DRAWING_NAMES
 
@@ -312,6 +313,7 @@ class QuickDrawing():
         self._name =name
         self._drawing_data = drawing_data
         self._strokes = None
+        self._image = None
 
     @property
     def name(self):
@@ -404,7 +406,53 @@ class QuickDrawing():
                 self._strokes.append(points)
 
         return self._strokes
-                
+
+    @property
+    def image(self):
+        """
+        Returns a `PIL Image <https://pillow.readthedocs.io/en/3.0.x/reference/Image.html>`_ 
+        object of the drawing on a white background with a black drawing. Alternative image
+        parameters can be set using ``get_image()``.
+
+        To save the image you would use the ``save`` method::
+
+            from quickdraw import QuickDrawData
+
+            qd = QuickDrawData()
+
+            anvil = qd.get_drawing("anvil")
+            anvil.image.save("my_anvil.gif")
+            
+        """
+        if self._image is None:
+            self._image = self.get_image()
+
+        return self._image
+
+    def get_image(self, stroke_color=(0,0,0), stroke_width=2, bg_color=(255,255,255)):
+        """
+        Get a `PIL Image <https://pillow.readthedocs.io/en/3.0.x/reference/Image.html>`_ 
+        object of the drawing.
+
+        :param list stroke_color:
+            A list of RGB (red, green, blue) values for the stroke color,
+            defaults to (0,0,0).
+
+        :param int stroke_color:
+            A width of the stroke, defaults to 2.
+
+        :param list bg_color:
+            A list of RGB (red, green, blue) values for the background color,
+            defaults to (255,255,255).
+        """
+        image = Image.new("RGB", (255,255), color=bg_color)
+        image_draw = ImageDraw.Draw(image)
+
+        for stroke in self.strokes:
+            image_draw.line(stroke, fill=stroke_color, width=stroke_width)
+
+        return image
+
     def __str__(self):
         return "QuickDrawing key_id={}".format(self.key_id)
 

@@ -9,7 +9,7 @@ else:
 
 __project__ = 'quickdraw'
 __desc__ = 'An API for downloading and reading the google quickdraw data.'
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 __author__ = "Martin O'Hanlon"
 __author_email__ = 'martin@ohanlonweb.com'
 __license__ = 'MIT'
@@ -47,14 +47,13 @@ sudo pip3 install quickdraw
 
 ## Use
 
-Open the Quick Draw data and pull back an **anvil** drawing.
+Open the Quick Draw data, pull back an **anvil** drawing and save it.
 
 ```python
     from quickdraw import QuickDrawData
     qd = QuickDrawData()
     anvil = qd.get_drawing("anvil")
-    
-    print(anvil)
+    anvil.image.save("my_anvil.gif")
 ```
 
 """
