@@ -135,7 +135,7 @@ Status
    :scale: 100 %
    :alt: quickdraw
 
-.. |quickdrawpreview| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/quickdraw_preview.png
+.. |quickdrawpreview| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/quickdraw_preview.jpg
    :scale: 100 %
    :alt: quickdraw_preview
 
