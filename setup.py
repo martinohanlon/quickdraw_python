@@ -9,12 +9,12 @@ else:
 
 __project__ = 'quickdraw'
 __desc__ = 'An API for downloading and reading the google quickdraw data.'
-__version__ = '0.0.3'
+__version__ = '0.0.4'
 __author__ = "Martin O'Hanlon"
 __author_email__ = 'martin@ohanlonweb.com'
 __license__ = 'MIT'
 __url__ = 'https://github.com/martinohanlon/quickdraw_python'
-__requires__ = ['pillow',]
+__requires__ = ['pillow', 'requests', ]
 __long_description__ = """# quickdraw
 
 [Google Quick, Draw!](https://quickdraw.withgoogle.com/) is a game which is 
@@ -55,6 +55,10 @@ Open the Quick Draw data, pull back an **anvil** drawing and save it.
     anvil = qd.get_drawing("anvil")
     anvil.image.save("my_anvil.gif")
 ```
+
+## Documentation
+
+[quickdraw.readthedocs.io](https://quickdraw.readthedocs.io)
 
 """
 
