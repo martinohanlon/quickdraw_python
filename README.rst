@@ -97,7 +97,7 @@ To iterate through all the drawings in a group use the `drawings` generator.
 Documentation
 -------------
 
-Can be found at `quickdraw-python.readthedocs.io <https://quickdraw-python.readthedocs.io>`_
+`API documentation` <https://quickdraw-python.readthedocs.io/en/latest/api.html>`_ be found at `quickdraw-python.readthedocs.io <https://quickdraw-python.readthedocs.io>`_
 
 Warning
 -------
