@@ -139,7 +139,7 @@ Status
    :scale: 100 %
    :alt: quickdraw_preview
 
-.. |myanvil| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/myanvil.png
+.. |myanvil| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/my_anvil.gif
    :scale: 100 %
    :alt: quickdraw_preview
 
