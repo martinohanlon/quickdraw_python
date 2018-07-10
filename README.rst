@@ -1,11 +1,11 @@
 quickdraw
 =========
 
-`Quick, Draw`_ is a drawing game which is training a neural network to recognise doodles.
+`Quick Draw`_ is a drawing game which is training a neural network to recognise doodles.
 
 |quickdraw|
 
-``quickdraw`` is an API for accessing the `Quick, Draw data`_ - it downloads the data files as and when needed, caches them locally and interprets them so they can be used.
+``quickdraw`` is an API for accessing the `Quick Draw data`_ - it downloads the data files as and when needed, caches them locally and interprets them so they can be used.
 
 Created by `Martin O'Hanlon`_ (`@martinohanlon`_, `stuffaboutco.de`_).
 
