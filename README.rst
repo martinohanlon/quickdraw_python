@@ -1,6 +1,8 @@
 quickdraw
 =========
 
+|pypibadge| |docsbadge|
+
 `Quick Draw`_ is a drawing game which is training a neural network to recognise doodles.
 
 |quickdraw|
@@ -128,7 +130,7 @@ The drawings have been moderated but there is no guarantee it'll actually be a p
 Status
 ------
 
-**Alpha** - under active dev, the API may change, problems might occur.
+**Beta** - stable, under active dev, the API may change.
 
 
 .. |quickdraw| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/quickdraw.png
@@ -143,6 +145,13 @@ Status
    :scale: 100 %
    :alt: quickdraw_preview
 
+.. |pypibadge| image:: https://badge.fury.io/py/quickdraw.svg
+   :target: https://badge.fury.io/py/quickdraw
+   :alt: Latest Version
+
+.. |docsbadge| image:: https://readthedocs.org/projects/quickdraw/badge/
+   :target: https://readthedocs.org/projects/quickdraw/
+   :alt: Docs
 
 .. _Martin O'Hanlon: https://github.com/martinohanlon
 .. _stuffaboutco.de: http://stuffaboutco.de
