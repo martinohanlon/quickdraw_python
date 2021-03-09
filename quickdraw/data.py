@@ -366,7 +366,10 @@ class QuickDrawDataGroup():
                 raise StopIteration()
             else:
                 # yield the next drawing
-                yield self.get_drawing(index = self._current_drawing)
+                try:
+                    yield self.get_drawing(index = self._current_drawing)
+                except StopIteration:
+                    return
 
     def get_drawing(self, index=None):
         """
