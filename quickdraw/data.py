@@ -363,7 +363,7 @@ class QuickDrawDataGroup():
             if self._current_drawing > self._drawing_count - 1:
                 # reached the end to the drawings
                 self._current_drawing = 0
-                raise StopIteration()
+                return
             else:
                 # yield the next drawing
                 try:
