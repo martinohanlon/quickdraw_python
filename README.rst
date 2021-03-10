@@ -130,7 +130,9 @@ The drawings have been moderated but there is no guarantee it'll actually be a p
 Status
 ------
 
-**Alpha** - stable.
+**Stable**. 
+
+Please raise issues at [github.com/martinohanlon/quickdraw_python/issues](https://github.com/martinohanlon/quickdraw_python/issues).
 
 .. |quickdraw| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/quickdraw.png
    :scale: 100 %
