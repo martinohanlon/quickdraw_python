@@ -169,4 +169,4 @@ Raise any `issues`_ in the `github repository`_.
 .. _drawing_names: https://quickdraw.readthedocs.io/en/latest/api.html#quickdraw.QuickDrawDataGroup.drawing_names
 .. _drawings: https://quickdraw.readthedocs.io/en/latest/api.html#quickdraw.QuickDrawDataGroup.drawings
 .. _issues: https://github.com/martinohanlon/quickdraw_python/issues
-.. _github repository: https://github.com/martinohanlon
+.. _github repository: https://github.com/martinohanlon/quickdraw_python
