@@ -130,8 +130,9 @@ The drawings have been moderated but there is no guarantee it'll actually be a p
 Status
 ------
 
-**Beta** - stable, under active dev, the API may change.
+**Stable**. 
 
+Raise any `issues`_ in the `github repository`_.
 
 .. |quickdraw| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/quickdraw.png
    :scale: 100 %
@@ -167,3 +168,5 @@ Status
 .. _QuickDrawDataGroup: https://quickdraw.readthedocs.io/en/latest/api.html#quickdrawdatagroup
 .. _drawing_names: https://quickdraw.readthedocs.io/en/latest/api.html#quickdraw.QuickDrawDataGroup.drawing_names
 .. _drawings: https://quickdraw.readthedocs.io/en/latest/api.html#quickdraw.QuickDrawDataGroup.drawings
+.. _issues: https://github.com/martinohanlon/quickdraw_python/issues
+.. _github repository: https://github.com/martinohanlon/quickdraw_python

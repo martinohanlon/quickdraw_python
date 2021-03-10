@@ -363,10 +363,13 @@ class QuickDrawDataGroup():
             if self._current_drawing > self._drawing_count - 1:
                 # reached the end to the drawings
                 self._current_drawing = 0
-                raise StopIteration()
+                return
             else:
                 # yield the next drawing
-                yield self.get_drawing(index = self._current_drawing)
+                try:
+                    yield self.get_drawing(index = self._current_drawing)
+                except StopIteration:
+                    return
 
     def get_drawing(self, index=None):
         """
