@@ -132,7 +132,7 @@ Status
 
 **Stable**. 
 
-Please raise issues at [github.com/martinohanlon/quickdraw_python/issues](https://github.com/martinohanlon/quickdraw_python/issues).
+Raise any `issues`_ in the `github repository`_.
 
 .. |quickdraw| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/quickdraw.png
    :scale: 100 %
@@ -168,3 +168,5 @@ Please raise issues at [github.com/martinohanlon/quickdraw_python/issues](https:
 .. _QuickDrawDataGroup: https://quickdraw.readthedocs.io/en/latest/api.html#quickdrawdatagroup
 .. _drawing_names: https://quickdraw.readthedocs.io/en/latest/api.html#quickdraw.QuickDrawDataGroup.drawing_names
 .. _drawings: https://quickdraw.readthedocs.io/en/latest/api.html#quickdraw.QuickDrawDataGroup.drawings
+.. _issues: https://github.com/martinohanlon/quickdraw_python/issues
+.. _github repository: https://github.com/martinohanlon
