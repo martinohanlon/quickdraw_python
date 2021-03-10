@@ -3,6 +3,11 @@ Change log
 
 .. currentmodule:: quickdraw
 
+0.2.0 - 2012-03-10
+------------------
+
++ Python 3.7+ compatibility fix
+
 0.1.0
 -----
 
