@@ -5,7 +5,7 @@ quickdraw
 
 .. raw:: html
 
-    <iframe allowtransparency="true" src="https://github.com/sponsors/martinohanlon/button" title="Sponsor martinohanlon" height="35" width="116" style="border: 0;"></iframe>
+    <iframe allowtransparency="true" style="background-color: white;" src="https://github.com/sponsors/martinohanlon/button" title="Sponsor martinohanlon" height="35" width="116" style="border: 0;"></iframe>
 
 `Quick Draw`_ is a drawing game which is training a neural network to recognise doodles.
 
