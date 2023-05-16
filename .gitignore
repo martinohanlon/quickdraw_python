@@ -36,3 +36,10 @@ docs/_build
 
 # quickdrawcache
 .quickdrawcache
+
+# example image files
+examples/*.gif
+examples/*.jpg
+examples/*.png
+examples/*.tif
+examples/*.bmp

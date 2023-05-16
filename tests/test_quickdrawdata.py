@@ -1,4 +1,4 @@
-from quickdraw import QuickDrawData, QuickDrawDataGroup
+from quickdraw import QuickDrawData, QuickDrawDataGroup, QuickDrawAnimation
 from PIL.Image import Image
 
 def test_get_specific_drawing():
@@ -26,10 +26,14 @@ def test_get_specific_drawing():
     assert isinstance(d.image, Image)
     assert isinstance(d.get_image(stroke_color=(10,10,10), stroke_width=4, bg_color=(200,200,200)), Image)
 
+    assert isinstance(d.animation, QuickDrawAnimation)
+    assert isinstance(d.get_animation(stroke_color=(10,10,10), stroke_width=4, bg_color=(200,200,200)), QuickDrawAnimation)
+    assert len(d.animation.frames) == 32
+
 def test_get_random_drawing():
     qd = QuickDrawData()
 
-    d = qd.get_drawing("anvil", 0)
+    d = qd.get_drawing("anvil")
     assert d.name == "anvil"
     assert isinstance(d.key_id, int)
     assert isinstance(d.recognized, bool)
@@ -47,6 +51,9 @@ def test_get_random_drawing():
 
     assert isinstance(d.image, Image)
     assert isinstance(d.get_image(stroke_color=(10,10,10), stroke_width=4, bg_color=(200,200,200)), Image)
+
+    assert isinstance(d.animation, QuickDrawAnimation)
+    assert isinstance(d.get_animation(stroke_color=(10,10,10), stroke_width=4, bg_color=(200,200,200)), QuickDrawAnimation)
 
 def test_drawing_names():
     qd = QuickDrawData()

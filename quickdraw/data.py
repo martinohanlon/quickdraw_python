@@ -13,7 +13,7 @@ BINARY_URL = "https://storage.googleapis.com/quickdraw_dataset/full/binary/"
 CACHE_DIR = path.join(".",".quickdrawcache")
 
 
-class QuickDrawData():
+class QuickDrawData:
     """
     Allows interaction with the Google Quick, Draw! data set, downloads 
     Quick Draw data from 
@@ -185,7 +185,7 @@ class QuickDrawData():
         return list(self._drawing_groups.keys())
 
 
-class QuickDrawDataGroup():
+class QuickDrawDataGroup:
     """
     Allows interaction with a group of Quick, Draw! drawings.
 
@@ -455,15 +455,16 @@ class QuickDrawDataGroup():
 
         return results
 
-class QuickDrawing():
+class QuickDrawing:
     """
     Represents a single Quick, Draw! drawing.
     """
     def __init__(self, name, drawing_data):
-        self._name =name
+        self._name = name
         self._drawing_data = drawing_data
         self._strokes = None
         self._image = None
+        self._animation = None
 
     @property
     def name(self):
@@ -602,7 +603,109 @@ class QuickDrawing():
             image_draw.line(stroke, fill=stroke_color, width=stroke_width)
 
         return image
+    
+    @property
+    def animation(self):
+        """
+        Returns a :class:`QuickDrawAnimation` instance representing the an 
+        animation of the QuickDrawing on a white background with a black 
+        drawing. Alternative image parameters can be set using 
+        ``get_animation()``.
+
+        To save the animation you would use the ``save`` method::
+
+            from quickdraw import QuickDrawData
+
+            qd = QuickDrawData()
+
+            anvil = qd.get_drawing("anvil")
+            anvil.animation.save("my_anvil_animation.gif")
+            
+        """
+        if self._animation is None:
+            self._animation = self.get_animation()
+
+        return self._animation
+
+    def get_animation(self, stroke_color=(0,0,0), stroke_width=2, bg_color=(255,255,255)):
+        """
+        Returns a :class:`QuickDrawAnimation` instance representing the an 
+        animation of the QuickDrawing being created.
+
+        :param list stroke_color:
+            A list of RGB (red, green, blue) values for the stroke color,
+            defaults to (0,0,0).
+
+        :param int stroke_color:
+            A width of the stroke, defaults to 2.
+
+        :param list bg_color:
+            A list of RGB (red, green, blue) values for the background color,
+            defaults to (255,255,255).
+        """
+        return QuickDrawAnimation(self, stroke_color, stroke_width, bg_color)
 
     def __str__(self):
         return "QuickDrawing key_id={}".format(self.key_id)
 
+class QuickDrawAnimation:
+    """
+    Represents an animation of a :class:`QuickDrawing`.
+
+    While an instance can be created directly it is typically returned by 
+    :meth:`QuickDrawing.get_animation` or :meth:`QuickDrawing.animation`.
+
+    To save the animation you would use the ``save`` method::
+
+        from quickdraw import QuickDrawData
+
+        qd = QuickDrawData()
+
+        anvil = qd.get_drawing("anvil")
+        anvil.animation.save("my_anvil_animation.gif")
+    """
+    def __init__(self, quick_drawing, stroke_color, stroke_width, bg_color): 
+        self._quick_drawing = quick_drawing
+        self._frames = []
+
+        image = Image.new("RGB", (255,255), color=bg_color)
+        image_draw = ImageDraw.Draw(image)
+
+        for stroke in self._quick_drawing.strokes:
+            for point in range(len(stroke)-1):
+                image_draw.line(
+                    (stroke[point], stroke[point+1]), 
+                    fill=stroke_color, 
+                    width=stroke_width
+                    )
+                self._frames.append(image.copy())
+
+    @property
+    def frames(self):
+        """
+        Returns a list `PIL Image <https://pillow.readthedocs.io/en/3.0.x/reference/Image.html>`_ 
+        objects of the animation.
+        """
+        return self._frames
+    
+    def save(self, filename, frame_length=0.1, loop_times=0):
+        """
+        Save's the animation to a given filename.
+
+        :param string filename:
+            The filename or path to save the animation. The filetype must be 
+            ``gif``.
+
+        :param int frame_length:
+            The time in seconds between each frame, defaults to 0.1.
+
+        :param int loop_times:
+            The number of times the animation should loop. A value of 0
+            will result in the animation looping forever. A value of ``None``
+            will result in the animation not looping. The default is 0.
+        """
+        kwargs = {}
+        if loop_times is not None:
+            kwargs["loop"] = loop_times
+
+        self._frames[0].save(filename, save_all=True, append_images=self._frames[1:], duration=frame_length*1000, **kwargs) 

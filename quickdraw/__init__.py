@@ -1,1 +1,1 @@
-from .data import QuickDrawData, QuickDrawDataGroup, QuickDrawing
+from .data import QuickDrawData, QuickDrawDataGroup, QuickDrawing, QuickDrawAnimation
