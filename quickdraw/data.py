@@ -649,22 +649,22 @@ class QuickDrawing:
         return "QuickDrawing key_id={}".format(self.key_id)
 
 class QuickDrawAnimation:
-    def __init__(self, quick_drawing, stroke_color, stroke_width, bg_color):
-        """
-        Represents an animation of a :class:`QuickDrawing`.
+    """
+    Represents an animation of a :class:`QuickDrawing`.
 
-        While an instance can be created directly it is typically returned by 
-        :meth:`QuickDrawing.get_animation` or :meth:`QuickDrawing.animation`.
+    While an instance can be created directly it is typically returned by 
+    :meth:`QuickDrawing.get_animation` or :meth:`QuickDrawing.animation`.
 
-        To save the animation you would use the ``save`` method::
+    To save the animation you would use the ``save`` method::
 
-            from quickdraw import QuickDrawData
+        from quickdraw import QuickDrawData
 
-            qd = QuickDrawData()
+        qd = QuickDrawData()
 
-            anvil = qd.get_drawing("anvil")
-            anvil.animation.save("my_anvil_animation.gif")
-        """
+        anvil = qd.get_drawing("anvil")
+        anvil.animation.save("my_anvil_animation.gif")
+    """
+    def __init__(self, quick_drawing, stroke_color, stroke_width, bg_color): 
         self._quick_drawing = quick_drawing
         self._frames = []
 
