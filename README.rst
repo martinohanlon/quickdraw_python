@@ -78,7 +78,7 @@ You can save the drawing using the ``image`` property.
 
 |myanvil|
 
-You can save an animation the drawing being drawn using the ``animation`` property.
+You can save an animation of the drawing using the ``animation`` property.
 
 .. code-block:: python
 

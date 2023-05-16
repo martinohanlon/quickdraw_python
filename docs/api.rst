@@ -17,3 +17,8 @@ QuickDrawing
 ------------
 
 .. autoclass:: QuickDrawing
+
+QuickDrawAnimation
+------------------
+
+.. autoclass:: QuickDrawAnimation
