@@ -11,7 +11,7 @@ quickdraw
 
 |quickdraw|
 
-``quickdraw`` is an API for accessing the `Quick Draw data`_ - it downloads the data files as and when needed, caches them locally and interprets them so they can be used.
+``quickdraw`` is a Python API for accessing the `Quick Draw data`_ - it downloads the data files as and when needed, caches them locally and interprets them so they can be used.
 
 |quickdrawpreview|
 
@@ -78,6 +78,14 @@ You can save the drawing using the ``image`` property.
 
 |myanvil|
 
+You can save an animation the drawing being drawn using the ``animation`` property.
+
+.. code-block:: python
+
+    anvil.animation.save("my_anvil_animation.gif")
+
+|myanvilanimation|
+
 You can open a group of Quick Draw drawings using `QuickDrawDataGroup`_ passing the name of the drawing ("anvil", "aircraft", "baseball", etc).
 
 .. code-block:: python
@@ -140,19 +148,23 @@ Raise any `issues`_ in the `github repository`_.
 
 .. |quickdraw| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/quickdraw.png
    :scale: 100 %
-   :alt: quickdraw
+   :alt: Quick Draw logo and banner
 
 .. |quickdrawpreview| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/quickdraw_preview.jpg
    :scale: 100 %
-   :alt: quickdraw_preview
+   :alt: examples drawings created using Quick Draw
 
 .. |myanvil| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/my_anvil.gif
    :scale: 100 %
-   :alt: quickdraw_preview
+   :alt: A Quick Draw drawing of a anvil
+
+.. |myanvilanimation| image:: https://raw.githubusercontent.com/martinohanlon/quickdraw_python/master/docs/images/my_anvil_animation.gif
+   :scale: 100 %
+   :alt: An animation of a Quick Draw drawing being drawn
 
 .. |pypibadge| image:: https://badge.fury.io/py/quickdraw.svg
    :target: https://badge.fury.io/py/quickdraw
-   :alt: Latest Version
+   :alt: Latest Version number
 
 .. |docsbadge| image:: https://readthedocs.org/projects/quickdraw/badge/
    :target: https://readthedocs.org/projects/quickdraw/

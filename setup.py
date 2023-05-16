@@ -9,7 +9,7 @@ else:
 
 __project__ = 'quickdraw'
 __desc__ = 'An API for downloading and reading the google quickdraw data.'
-__version__ = '0.2.0'
+__version__ = '1.0.0'
 __author__ = "Martin O'Hanlon"
 __author_email__ = 'martin@ohanlonweb.com'
 __license__ = 'MIT'
@@ -64,8 +64,8 @@ Open the Quick Draw data, pull back an **anvil** drawing and save it.
 
 __classifiers__ = [
 #   "Development Status :: 3 - Alpha",
-   "Development Status :: 4 - Beta",
-#   "Development Status :: 5 - Production/Stable",
+#   "Development Status :: 4 - Beta",
+   "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Education",
     "Intended Audience :: Developers",
     "Topic :: Education",
@@ -79,6 +79,7 @@ __classifiers__ = [
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
 ]
 
 if __name__ == '__main__':
